@@ -21,24 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
 
-      function Column(name) {
-        var self = this;
-      
-        this.id = randomString();
-        this.name = name;
-        this.element = generateTemplate('column-template', { name: this.name });
-      }
-
-
-      this.element.querySelector('.column').addEventListener('click', function (event) {
-        if (event.target.classList.contains('btn-delete')) {
-          self.removeColumn();
-        }
-      
-        if (event.target.classList.contains('add-card')) {
-          self.addCard(new Card(prompt("Enter the name of the card")));
-        }
-      });
+     
 
 
       function Column(name) {
@@ -92,10 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 
-    addColumn: function(column) {
-        this.element.appendChild(column.element);
-        initSortable(column.id); //About this feature we will tell later
-      }
+  
 
       function initSortable(id) {
         var el = document.getElementById(id);
